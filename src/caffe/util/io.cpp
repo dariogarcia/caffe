@@ -82,6 +82,8 @@ cv::Mat ReadImageToCVMat(const string& filename,
   } else {
     cv_img = cv_img_origin;
   }
+  //Save transformed image
+  cv::imwrite(filename+".out",cv_img);
   return cv_img;
 }
 
