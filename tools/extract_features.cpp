@@ -154,8 +154,17 @@ int feature_extraction_pipeline(int argc, char** argv) {
         datum.clear_float_data();
         feature_blob_data = feature_blob->cpu_data() +
             feature_blob->offset(n);
+        //Open a file to write the features
+        std::ofstream file;
+        char bs[21];
+        sprintf(bs,"%d",batch_index);
+        char is[21];
+        sprintf(is,"%d",i);
+        file.open((dataset_names[i]+"/output_"+bs+"_"+is).c_str());
         for (int d = 0; d < dim_features; ++d) {
           datum.add_float_data(feature_blob_data[d]);
+          //Store feature in file
+          file<<feature_blob_data[d]<<" "<<d<<"\n";
         }
         int length = snprintf(key_str, kMaxKeyStrLength, "%d",
             image_indices[i]);
