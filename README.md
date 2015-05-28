@@ -2,8 +2,9 @@
 
 This fork does not implement new functionalities. It just modifies a couple of classes in order to extract internal information in the image classification process.
 The data extracted is mostly:
--Activating features when classifying an image
--Post-processed image (after scaling and cropping) 
+
+- Activating features when classifying an image
+- Post-processed image (after scaling and cropping) 
 
 The purpose of extracting information is to enable other learning processes (see project tiramisu https://github.com/dariogarcia/tiramisu)
 
