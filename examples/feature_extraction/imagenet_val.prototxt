@@ -7,10 +7,10 @@ layer {
   transform_param {
     mirror: false
     crop_size: 227
-    mean_file: "data/ilsvrc12/imagenet_mean.binaryproto"
+    mean_file: "/home/dariog/repos/caffe/data/ilsvrc12/imagenet_mean.binaryproto"
   }
   image_data_param {
-    source: "examples/_temp/file_list.txt"
+    source: "/home/dariog/repos/tiramisu/file_list.txt"
     batch_size: 50
     new_height: 256
     new_width: 256
